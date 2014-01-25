@@ -1,0 +1,322 @@
+@font-face {/*Importiert Schriftart Poly können wir auch noch leich ändern wenn euch eine andere besser Gefällt */
+font-family: Poly;
+src: url('Poly.woff');
+font-style: normal;
+font-weight: 400;
+}
+@import url(normalize.css);/*Importiert normalize.css nicht von mir,soll alles schöner ausehen lassen ;) */
+html {
+    height: 100%;/* */
+    font-size: 100%;
+    overflow-y: scroll; /* Force a scrollbar in non-IE //ja ist halt so*/
+    -webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust on orientation change without disabling user zoom // habe ich nur übernommen */
+    -ms-text-size-adjust: 100%;
+	/* Hintergrund */
+    background: #f0f0f0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	/* Hintergrund Farbverlauf -Browser gelten so auch weiter unten */
+    background-image: linear-gradient(top, rgb(183,245,245) 20%, rgb(255,255,255) 50%);/* in der Zukunft für alle Browser */
+    background-image: -o-linear-gradient(top, rgb(183,245,245) 20%, rgb(255,255,255) 50%);/*noch für Oper - bald auch webkit */
+    background-image: -moz-linear-gradient(top, rgb(183,245,245) 20%, rgb(255,255,255) 50%);/*für Firefox */
+    background-image: -webkit-linear-gradient(top, rgb(183,245,245) 20%, rgb(255,255,255) 50%);/*für Chrome und Safarie */
+    background-image: -ms-linear-gradient(top, rgb(183,245,245) 20%, rgb(255,255,255) 50%);/*für IE */
+}
+
+body {
+    min-height: 100%;
+    max-width: 70%;
+    margin: 0 auto;/*Seitenabstand Außen */
+    background: rgba(255, 255, 255, 0.5);/* Hintergrund */
+    padding: 1%;/*Seitenabstand Innen */
+    color: #FF7C06;/*Textfarbe */
+    
+}
+h1 {
+	font-family: 'Poly', serif;/*Schriftart von allen h1 elementen */
+	padding-left:20%;
+	padding-top:1%;
+	font-size: 350%; /*Schriftgröße */
+	letter-spacing: -1px;/*Buchstabenabstand */
+	text-shadow: #c0c0c0 1px 1px 0px;/*Textschatten */
+}
+h1 a{/*Gilt fur alle h1 Elemente die gleichzeitig auch ein Link sind, also a */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    color: #FF7C06;
+    text-decoration: none;/*damit der Link nicht unterstrichen wird */
+}
+
+h1 a:hover{/*Das Element h1 a bekommt ein Schatten (text-shadow) beim rübergehen mit der Maus (hover)  */
+text-shadow: #c0c0c0 3px 3px 5px;
+}
+/*
+ * Falls wir "MGS" wieder haben wollen 
+h3 {
+	font-family: 'Poly', serif;
+	text-align: center; 
+	padding:0px;
+	text-shadow: #c0c0c0 1px 1px 0px;
+}
+*/
+#b{/*Gilt für das Logo da es die ID b hat */
+  padding:0px;
+  width: 100px; 
+  height: 100px;
+  padding-bottom:1px;
+  float:left;/*Umfluss Links */
+  -webkit-transition: 300ms all ease;/*da mit es beim drüber gehen mit der Maus langsamer bewegt */
+  -moz-transition: 300ms all ease;
+  -ms-transition: 300ms all ease;
+  -o-transition: 300ms all ease;
+  transition: 300ms all ease;
+}
+#b:hover{/*Logo beim rübergehen */
+ transform:rotate(-7deg);/*Drehung um 7 deg nach rechts */
+    -ms-transform:rotate(-7deg); 
+    -moz-transform:rotate(-7deg); 
+    -webkit-transform:rotate(-7deg); 
+    -o-transform:rotate(-7deg); 
+}
+/*Von http://webstandard.kulando.de/ Liezens: https://creativecommons.org/licenses/by-sa/3.0/legalcode */
+/*Damit Input-Felder und der Senden Button besser aussehen  */
+input,textarea {
+margin: 1%;
+background-color:#FFF;
+color: #4d4d4d;
+border: 1px solid #c4c4c4;
+padding: 7px 12px;
+width: 190px;
+_width: 186px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 2px 2px 5px #e2e2e2, inset 2px 2px 5px #e2e2e2;
+-moz-box-shadow: 2px 2px 5px #e2e2e2, inset 2px 2px 5px #e2e2e2;
+box-shadow: 2px 2px 5px #e2e2e2, inset 2px 2px 5px #e2e2e2;
+/* IE filter */
+filter:progid:DXImageTransform.Microsoft.Shadow(color='#e2e2e2', Direction=135, Strength=5);
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color='#e2e2e2', Direction=135, Strength=5)"
+}
+input:focus,
+textarea:focus {
+border-color: #4d4d4d;
+}
+input[type="submit"] {
+background-color: #FF7C06;
+color: #fff;
+cursor: pointer;
+font: italic bold 1em/1.2 Georgia, "Times New Roman", Times, Cambria, "Nimbus Roman No9 L", serif;
+border: 1px double #e35061;
+margin: 10px;
+padding: 5px 10px;
+width: auto;
+
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+
+background: -moz-linear-gradient(top, #ff9506, #FF7C06);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff9506), color-stop(1, #FF7C06));
+filter:	progid:DXImageTransform.Microsoft.gradient(startColorStr='#ff9506', EndColorStr='#FF7C06');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ff9506', EndColorStr='#FF7C06')";
+
+box-shadow:none;
+text-shadow: 1px 1px 3px #333;
+}
+input[type="submit"]:hover {
+background: #FF7C06;
+text-shadow: none;
+}
+textarea {
+width: 425px;
+overflow: auto;
+}
+/* http://cssdeck.com/labs/styling-select-box-with-css3 irgendwie noch ein Problem mit chrome */
+select {
+    padding:7px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 1px 0 #e05f0f, 0 -1px #e05f0f inset;
+    -moz-box-shadow: 0 1px 0 #e05f0f, 0 -1px #e05f0f inset;
+    box-shadow: 0 1px 0 #e05f0f, 0 -1px #e05f0f inset;
+    background: #f8f8f8;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+
+section {/*ist alles was im <section> steht */
+padding-left:3%;
+padding-top:3%;
+width: 800px;
+    column-count: 2;/*Damit wir zweispalten haben -kann opera schon lesen IE nur nicht ;( */
+    column-gap: 10%;/*Die 40 % breit sind  */
+    -moz-column-count: 2;
+    -moz-column-gap: 10%;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 40%;
+}
+/*Beginn des Menüs - ich erspare mir hier mal die Kommentare da es nicht von mir ist */
+/*Von http://cssmenumaker.com/ Lizens: http://cssmenumaker.com/terms-of-use-privacy */
+nav ul,
+nav li,
+nav span,
+nav a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+nav {
+  height: 33px;/* höhe menü */
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  background: #141414;
+  background: -moz-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #32323a), color-stop(100%, #141414));
+  background: -webkit-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -o-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -ms-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: linear-gradient(to bottom, #32323a 0%, #141414 100%);
+  border-bottom: 2px solid #e05f0f;
+}
+nav:after,
+nav ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+nav a {
+ background: #141414; 
+  background: -moz-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #32323a), color-stop(100%, #141414));
+  background: -webkit-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -o-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: -ms-linear-gradient(top, #32323a 0%, #141414 100%);
+  background: linear-gradient(to bottom, #32323a 0%, #141414 100%);
+  color: #ffffff;
+  display: inline-block;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 12px;
+  line-height: 33px; /* Höhe menü */
+  padding: 0 20px; /* Abstand einzelner Menüpunkte*/
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+}
+nav > ul {
+  float: left;
+}
+nav > ul > li {
+  float: left;
+}
+nav > ul > li:hover:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e05f0f;
+  margin-left: -10px;
+}
+nav > ul > li:first-child > a {
+  border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+}
+nav > ul > li:last-child > a {
+  border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+}
+nav > ul > li.active a {
+  box-shadow: inset 0 0 3px #000000;
+  -moz-box-shadow: inset 0 0 3px #000000;
+  -webkit-box-shadow: inset 0 0 3px #000000;
+  background: #070707;
+  background: -moz-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #26262c), color-stop(100%, #070707));
+  background: -webkit-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -o-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -ms-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: linear-gradient(to bottom, #26262c 0%, #070707 100%);
+}
+nav > ul > li:hover > a {
+  background: #070707;
+  background: -moz-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #26262c), color-stop(100%, #070707));
+  background: -webkit-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -o-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: -ms-linear-gradient(top, #26262c 0%, #070707 100%);
+  background: linear-gradient(to bottom, #26262c 0%, #070707 100%);
+  box-shadow: inset 0 0 3px #000000;
+  -moz-box-shadow: inset 0 0 3px #000000;
+  -webkit-box-shadow: inset 0 0 3px #000000;
+}
+nav .has-sub {
+  z-index: 1;
+}
+nav .has-sub:hover > ul {
+  display: block;
+}
+nav .has-sub ul {
+  display: none;
+  position: absolute;
+  width: 200px;
+  top: 100%;
+  left: 0;
+}
+nav .has-sub ul li {
+  *margin-bottom: -1px;
+}
+nav .has-sub ul li a {
+  background: #e05f0f;
+  border-bottom: 1px dotted #ec9f6f;
+  filter: none;
+  font-size: 11px;
+  display: block;
+  line-height: 120%;
+  padding: 10px;
+}
+nav .has-sub ul li:hover a {
+  background: #b04b0c;
+}
+nav .has-sub .has-sub:hover > ul {
+  display: block;
+}
+nav .has-sub .has-sub ul {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+nav .has-sub .has-sub ul li a {
+  background: #b04b0c;
+  border-bottom: 1px dotted #d0936d;
+}
+nav .has-sub .has-sub ul li a:hover {
+  background: #803709;
+}
+
+/*für den footer */
+footer {
+	font-size: 120%; 
+    width: 100%;
+    height: 40px;
+    border-top: 1px dotted #AAA;
+    padding-top: 4px;
+    margin-top: 36px;
+}
